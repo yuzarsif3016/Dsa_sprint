@@ -4,7 +4,7 @@ public class Patterns {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        pattern10(5);
+        pattern13(5);
 
     }
     public static void pattern1(int n){
@@ -204,5 +204,72 @@ public class Patterns {
     }
 
 
+    public static void pattern11(int n){
+        int val = 1;
+        for (int i = 1; i <= n ; i++) {
+            for (int j = 1; j <= i ; j++) {
+                System.out.print(val+"\t");
+                val++;
+            }
+
+            System.out.println();
+        }
+
+    }
+
+    public static void pattern12(int n){
+        int a = 0,b = 1;
+        for (int i = 1; i <= n ; i++) {
+            for (int j = 1; j <= i ; j++) {
+                System.out.print(a+"\t");
+                int c = a+b;
+                a=b;
+                b=c;
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void pattern13(int n){
+
+        int sp = n/2;
+        int st = 1;
+        int val = 1;
+
+        for (int i = 1; i <= n ; i++) {
+
+            int cval = val;
+            for (int j = 1; j <= sp ; j++) {
+                System.out.print("\t");
+            }
+
+            for (int j = 1; j <= st ; j++) {
+                System.out.print(cval +"\t");
+
+                if(j <= st / 2){
+                    cval++;
+                }
+                else{
+                    cval--;
+                }
+            }
+
+            if(i <= n /2)
+            {
+                sp--;
+                st+=2;
+                val++;
+            }
+            else{
+                sp++;
+                st-=2;
+                val--;
+            }
+
+
+            System.out.println();
+        }
+    }
 
 }
